@@ -3,11 +3,14 @@ import dotenv from 'dotenv';
 import connectDB from './db/connectDB.js';
 
 dotenv.config();
-const PORT = process.env.PORT || 50001;
+
 const app = express();
 
+const PORT = process.env.PORT || 50001;
+
+app.use('/api/auth', authRoutes);
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Home Page of authentication server');
 });
 
 app.listen(PORT, (error) => {
