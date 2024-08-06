@@ -9,6 +9,7 @@ const app = express();
 
 const PORT = process.env.PORT || 50001;
 
+app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.get("/", (req, res) => {
   res.send("Home Page of authentication server");
